@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS - Empowering Workforces. Elevating Businesses.</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.splash-bg {
+background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+position: relative;
+overflow: hidden;
+}
+.splash-bg::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: url('https://readdy.ai/api/search-image?query=silhouettes%20of%20professional%20business%20people%20walking%20into%20modern%20corporate%20buildings%20at%20dusk%2C%20minimalist%20dark%20background%2C%20cinematic%20lighting%2C%20professional%20atmosphere%2C%20urban%20skyline%2C%20gradient%20overlay&width=1920&height=1080&seq=splash001&orientation=landscape');
+background-size: cover;
+background-position: center;
+opacity: 0.3;
+}
+.logo-glow {
+text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+to { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
+}
+.loader {
+width: 40px;
+height: 40px;
+border: 3px solid rgba(255, 255, 255, 0.3);
+border-top: 3px solid white;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.fade-in {
+animation: fadeIn 1.5s ease-in-out;
+}
+.fade-in-delay {
+animation: fadeIn 2s ease-in-out 1s both;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.hero-video-bg {
+background-image: url('https://readdy.ai/api/search-image?query=professional%20corporate%20workforce%20deployment%20scene%20with%20business%20people%20in%20modern%20office%20environment%2C%20team%20collaboration%2C%20diverse%20professionals%20working%20together%2C%20corporate%20atmosphere%2C%20high%20quality%20business%20photography&width=1920&height=1080&seq=hero001&orientation=landscape');
+background-size: cover;
+background-position: center;
+position: relative;
+}
+.hero-video-bg::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(55, 48, 163, 0.6) 100%);
+}
+.service-card {
+transition: all 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.service-icon {
+transition: transform 0.3s ease;
+}
+.service-card:hover .service-icon {
+transform: scale(1.1);
+}
+.counter {
+font-weight: 700;
+color: #1e40af;
+}
+.testimonial-card {
+background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+.cta-banner {
+background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+position: relative;
+}
+.cta-banner::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: url('https://readdy.ai/api/search-image?query=abstract%20corporate%20background%20with%20geometric%20patterns%2C%20professional%20business%20atmosphere%2C%20subtle%20texture%20overlay%2C%20modern%20corporate%20design%20elements%2C%20blue%20gradient%20compatible&width=1920&height=600&seq=cta001&orientation=landscape');
+background-size: cover;
+background-position: center;
+opacity: 0.1;
+}
+.hidden { display: none; }
+.block { display: block; }
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1e40af',
+secondary: '#3730a3'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+'DEFAULT': '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="font-sans">
+<div id="splash-screen" class="splash-bg fixed inset-0 z-50 flex flex-col items-center justify-center text-white">
+<div class="relative z-10 text-center">
+<h1 class="font-['Pacifico'] text-6xl mb-6 logo-glow fade-in">LMS</h1>
+<p class="text-xl mb-8 fade-in-delay">Empowering Workforces. Elevating Businesses.</p>
+<div class="loader mx-auto mb-8"></div>
+<!-- <button id="enter-site" class="bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap fade-in-delay">
+Enter Site
+</button> -->
+</div>
+</div>
+<div id="main-site" class="display">
+<header class="bg-white shadow-sm">
+<nav class="fixed top-0 w-full bg-secondary/95 backdrop-blur-sm z-50 border-b border-primary/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center">
+    <a>
+        <img class="w-10 h-10 rounded-full" src="https://example.com/avatar.jpg" alt="Avatar">
+        <div class="text-2xl font-['Pacifico'] text-primary">LMS</div>
+    </a>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-8">
+<a href="index.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Home</a>
+<a href="about-Us.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">About Us</a>
+<a href="services.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Services</a>
+<a href="gallery.html" class="text-primary border-b-2 border-primary px-3 py-2">Gallery</a>
+<a href="careers.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Careers</a>
+<a href="contact-Us.html" class="text-white hover:text-primary transition-colors duration-300 px-3 py-2">Contact</a>
+</div>
+</div>
+<div class="hidden md:block">
+<button onclick window.location.href='contact-Us.html'
+class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-secondary transition-all duration-300 px-6 py-2 !rounded-button whitespace-nowrap">
+Get Quote
+</button>
+</div>
+<div class="md:hidden">
+<button id="mobileMenuBtn" class="text-white hover:text-primary transition-colors duration-300">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-secondary border-l border-primary/20 md:hidden">
+<div class="p-4">
+<button id="closeMobileMenu" class="text-white hover:text-primary transition-colors duration-300 mb-8">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-close-line ri-lg"></i>
+</div>
+</button>
+<div class="space-y-4">
+<a href="#home" class="block text-white hover:text-primary transition-colors duration-300 py-2">Home</a>
+<a href="#about" class="block text-white hover:text-primary transition-colors duration-300 py-2">About Us</a>
+<a href="#services" class="block text-white hover:text-primary transition-colors duration-300 py-2">Services</a>
+<a href="#gallery" class="block text-primary py-2">Gallery</a>
+<a href="#careers" class="block text-white hover:text-primary transition-colors duration-300 py-2">Careers</a>
+<a href="#contact" class="block text-white hover:text-primary transition-colors duration-300 py-2">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<section class="hero-video-bg h-screen flex items-center">
+<div class="relative z-10 w-full px-6">
+<div class="max-w-6xl mx-auto">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold text-white mb-6 leading-tight">
+Building Tomorrow's Workforce Today
+</h1>
+<p class="text-xl text-gray-200 mb-8 leading-relaxed">
+We connect exceptional talent with forward-thinking companies across India. From skilled professionals to specialized teams, we deliver workforce solutions that drive growth and innovation.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="https://readdy.ai/home/e0968c66-ceb2-4de9-b6eb-97bdebe279f8/8bfebadb-8b61-424e-94a2-67ee878b2899" data-readdy="true">
+<button class="bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+Request Proposal
+</button>
+</a>
+<button class="border-2 border-white text-white px-8 py-4 !rounded-button font-semibold hover:bg-white hover:text-primary transition-colors whitespace-nowrap">
+Learn More
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+Comprehensive workforce solutions tailored to your business needs
+</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="service-card bg-white p-8 rounded-xl shadow-sm">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6 service-icon">
+<i class="ri-team-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Staff Augmentation</h3>
+<p class="text-gray-600">
+Scale your team with skilled professionals who integrate seamlessly with your existing workforce.
+</p>
+</div>
+<div class="service-card bg-white p-8 rounded-xl shadow-sm">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6 service-icon">
+<i class="ri-building-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Project Outsourcing</h3>
+<p class="text-gray-600">
+Complete project delivery with dedicated teams and proven methodologies for guaranteed results.
+</p>
+</div>
+<div class="service-card bg-white p-8 rounded-xl shadow-sm">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6 service-icon">
+<i class="ri-search-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Talent Acquisition</h3>
+<p class="text-gray-600">
+Strategic recruitment services to find and hire the best talent for your organization.
+</p>
+</div>
+<div class="service-card bg-white p-8 rounded-xl shadow-sm">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6 service-icon">
+<i class="ri-settings-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Managed Services</h3>
+<p class="text-gray-600">
+End-to-end management of your workforce operations with continuous optimization and support.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<div class="p-8">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6">
+<i class="ri-award-line text-3xl text-primary"></i>
+</div>
+<div class="counter text-4xl font-bold mb-2">150+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Clients Served</h3>
+<p class="text-gray-600">Trusted by leading companies across various industries</p>
+</div>
+<div class="p-8">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6">
+<i class="ri-group-line text-3xl text-primary"></i>
+</div>
+<div class="counter text-4xl font-bold mb-2">5000+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Staff Deployed</h3>
+<p class="text-gray-600">Skilled professionals working across client organizations</p>
+</div>
+<div class="p-8">
+<div class="w-20 h-20 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-6">
+<i class="ri-map-pin-line text-3xl text-primary"></i>
+</div>
+<div class="counter text-4xl font-bold mb-2">PAN</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">India Presence</h3>
+<p class="text-gray-600">Nationwide coverage with local expertise in every region</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+<p class="text-xl text-gray-600">
+Success stories from companies who trust us with their workforce needs
+</p>
+</div>
+<div class="testimonial-carousel">
+<div class="testimonial-card p-8 rounded-xl shadow-sm max-w-4xl mx-auto">
+<div class="flex items-start space-x-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20business%20executive%20headshot%2C%20confident%20corporate%20leader%2C%20modern%20business%20portrait%2C%20clean%20background%2C%20professional%20lighting&width=80&height=80&seq=client001&orientation=squarish"
+alt="Client" class="w-20 h-20 rounded-full object-cover">
+<div class="flex-1">
+<blockquote class="text-lg text-gray-700 mb-4 italic">
+"LMS transformed our hiring process completely. Their team understood our requirements perfectly and delivered exceptional talent that has become integral to our success. The quality of professionals and the speed of deployment exceeded our expectations."
+</blockquote>
+<div>
+<div class="font-semibold text-gray-900">Sarah Johnson</div>
+<div class="text-gray-600">VP of Operations, TechCorp Solutions</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-banner py-20 text-white">
+<div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+<h2 class="text-4xl font-bold mb-6">Let's Build Your Team Together</h2>
+<p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+Ready to scale your workforce with top-tier talent? Connect with our experts today and discover how we can accelerate your business growth.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">
+Talk to Us
+</button>
+<div class="flex items-center justify-center space-x-6 text-white/90">
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-phone-line"></i>
+</div>
+<span>+91 98765 43210</span>
+</div>
+<div class="flex items-center space-x-2">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-mail-line"></i>
+</div>
+<span>contact@lms.com</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<div class="font-['Pacifico'] text-2xl mb-4">LMS</div>
+<p class="text-gray-400 mb-4">
+Empowering businesses with exceptional workforce solutions across India.
+</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-linkedin-fill"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-twitter-fill"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+<i class="ri-facebook-fill"></i>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Services</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">Staff Augmentation</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Project Outsourcing</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Talent Acquisition</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Managed Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Company</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Our Team</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+<li><a href="#" class="hover:text-white transition-colors">News</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contact</h3>
+<ul class="space-y-2 text-gray-400">
+<li class="flex items-center space-x-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-map-pin-line text-xs"></i>
+</div>
+<span>Mumbai, Delhi, Bangalore</span>
+</li>
+<li class="flex items-center space-x-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-phone-line text-xs"></i>
+</div>
+<span>+91 98765 43210</span>
+</li>
+<li class="flex items-center space-x-2">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-mail-line text-xs"></i>
+</div>
+<span>contact@lms.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p class="text-gray-400 text-sm">
+© <span id="current-year">2024</span> LMS Corporate Services. All rights reserved.
+</p></div>
+</div>
+</footer>
+</div>
+<script id="splash-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const enterButton = document.getElementById('enter-site');
+const splashScreen = document.getElementById('splash-screen');
+const mainSite = document.getElementById('main-site');
+enterButton.addEventListener('click', function() {
+splashScreen.style.opacity = '0';
+splashScreen.style.transition = 'opacity 1s ease-out';
+setTimeout(() => {
+splashScreen.classList.add('hidden');
+mainSite.classList.remove('hidden');
+mainSite.classList.add('block');
+}, 1000);
+});
+});
+</script>
+<script id="counter-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const counters = document.querySelectorAll('.counter');
+const animateCounter = (counter) => {
+const target = counter.textContent.includes('+') ?
+parseInt(counter.textContent.replace('+', '')) :
+counter.textContent;
+if (target === 'PAN') return;
+let current = 0;
+const increment = target / 100;
+const timer = setInterval(() => {
+current += increment;
+if (current >= target) {
+counter.textContent = target + '+';
+clearInterval(timer);
+} else {
+counter.textContent = Math.floor(current) + '+';
+}
+}, 20);
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateCounter(entry.target);
+observer.unobserve(entry.target);
+}
+});
+});
+counters.forEach(counter => {
+observer.observe(counter);
+});
+});
+</script>
+
+</body>
+</html>
